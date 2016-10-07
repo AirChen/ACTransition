@@ -115,3 +115,5 @@ UIViewControllerTransitioningDelegate //UIViewController 的 transitioningDelega
 
        [fromView removeFromSuperview]; 
     }
+
+一套模仿QQ的UI：https://github.com/AirChen/UITest
