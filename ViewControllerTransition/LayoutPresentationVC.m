@@ -10,7 +10,7 @@
 
 @interface LayoutPresentationVC()
 
-@property(nonatomic,strong) UIView *dimmingView;
+@property(nonatomic,strong) UIVisualEffectView *dimmingView;
 
 @end
 
@@ -18,17 +18,14 @@
 
 -(void)presentationTransitionWillBegin
 {
-    CGFloat viewWidth = self.containerView.bounds.size.width *2/3;
-    CGFloat viewHeight = self.containerView.bounds.size.height *2/3;
-    _dimmingView = [[UIView alloc] init];
+    CGFloat viewWidth = self.containerView.bounds.size.width;
+    CGFloat viewHeight = self.containerView.bounds.size.height;
+    _dimmingView = [[UIVisualEffectView alloc] initWithFrame:CGRectMake(0, 0, viewWidth, viewHeight)];
     [self.containerView addSubview:_dimmingView];
-    _dimmingView.bounds = CGRectMake(0, 0, viewWidth, viewHeight);
-    _dimmingView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
-    _dimmingView.center = self.containerView.center;
     
     [self.presentingViewController.transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-                _dimmingView.bounds = self.containerView.bounds;
-            } completion:nil];
+        _dimmingView.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    } completion:nil];
 
 }
 
@@ -38,19 +35,16 @@
      The blocks you provide are stored until the transition animations begin, at which point they are executed along with the rest of the transition animations.
      */
     [self.presentedViewController.transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        _dimmingView.alpha = 0.0;
+        _dimmingView.effect = nil;
     } completion:nil];
 }
 
 -(void)containerViewWillLayoutSubviews
 {
-    _dimmingView.center = self.containerView.center;
-    _dimmingView.bounds = self.containerView.bounds;
-    
-    CGFloat viewWidth = self.containerView.bounds.size.width *2/3;
-    CGFloat viewHeight = self.containerView.bounds.size.height *2/3;
-    self.presentedView.center = self.containerView.center;
+    CGFloat viewWidth = self.containerView.bounds.size.width * 2.0f/3.0f;
+    CGFloat viewHeight = self.containerView.bounds.size.height * 2.0f/3.0f;
     self.presentedView.bounds = CGRectMake(0, 0, viewWidth, viewHeight);
+    self.presentedView.center = self.containerView.center;
 }
 
 @end

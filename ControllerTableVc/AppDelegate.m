@@ -7,10 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "TableTransViewController.h"
 
 @interface AppDelegate ()
 @property(nonatomic,strong) UIViewController *vc1;
-@property(nonatomic,strong) UIViewController *vc2;
+@property(nonatomic,strong) TableTransViewController *vc2;
 @end
 
 @implementation AppDelegate
@@ -20,23 +21,26 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
     
     UIViewController *vc1 = [[UIViewController alloc] init];
     vc1.view.backgroundColor = [UIColor orangeColor];
-    
-    self.window.rootViewController = vc1;
-    
+
+    UINavigationController* naviVc = [[UINavigationController alloc] initWithRootViewController:vc1];
+
+    self.window.rootViewController = naviVc;
+
     [self.window makeKeyAndVisible];
-    
+
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ges1)];
     [vc1.view addGestureRecognizer:gesture];
-    
-    UIViewController *vc2 = [[UIViewController alloc] init];
+
+    TableTransViewController *vc2 = [[TableTransViewController alloc] init];
     vc2.view.backgroundColor = [UIColor grayColor];
-    
-    UITapGestureRecognizer *gesture2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ges2)];
-    [vc2.view addGestureRecognizer:gesture2];
- 
+
+//    UITapGestureRecognizer *gesture2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ges2)];
+//    [vc2.view addGestureRecognizer:gesture2];
+
     _vc1 = vc1;
     _vc2 = vc2;
     
@@ -45,12 +49,12 @@
 
 -(void)ges1
 {
-    [_vc1 presentViewController:_vc2 animated:YES completion:nil];
+    [_vc1.navigationController pushViewController:_vc2 animated:YES];
 }
 
 -(void)ges2
 {
-    [_vc2 dismissViewControllerAnimated:YES completion:nil];
+    [_vc1.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

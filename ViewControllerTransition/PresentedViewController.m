@@ -20,7 +20,6 @@
     // Do any additional setup after loading the view.
     
     [_diningBtn addTarget:self action:@selector(dismissView) forControlEvents:UIControlEventTouchUpInside];
-    
     _diningBtn.alpha = 0;
 }
 
@@ -28,33 +27,28 @@
 {
     [super viewDidAppear:animated];
     
-    for (NSLayoutConstraint *constraint in _textField.constraints) {
-        if ([constraint.identifier  isEqual: @"Width"]) {
-            constraint.constant = self.view.frame.size.width * 2 / 3;
-        }
-    }
-    
-    [UIView animateWithDuration:0.3 animations:^{
+    CGFloat fieldHei = _textField.bounds.size.height;
+    CGFloat modifiedWid = self.view.bounds.size.width * 2.0f/3.0f;
+        
+    [UIViewPropertyAnimator runningPropertyAnimatorWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
         _diningBtn.alpha = 1;
-        [_textField layoutIfNeeded];
+        _textField.bounds = CGRectMake(0.0f, 0.0f, modifiedWid, fieldHei);
+    } completion:^(UIViewAnimatingPosition finalPosition) {
         
     }];
 }
 
 -(void)dismissView
 {
-    for (NSLayoutConstraint *constraint in _textField.constraints) {
-        if ([constraint.identifier  isEqual: @"Width"]) {
-            constraint.constant = 0;
-        }
-    }
-    CGAffineTransform applyTransform = CGAffineTransformMakeRotation( 3 * (CGFloat)M_PI);
-    applyTransform = CGAffineTransformScale(applyTransform, 0.1, 0.1);
+    CGAffineTransform applyTransform = CGAffineTransformMakeRotation( 3.0f * (CGFloat)M_PI);
+    applyTransform = CGAffineTransformScale(applyTransform, 0.1f, 0.1f);
     
-    [UIView animateWithDuration:0.4 animations:^{
+    CGFloat fieldHei = _textField.bounds.size.height;
+
+    [UIViewPropertyAnimator runningPropertyAnimatorWithDuration:0.4f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
         _diningBtn.transform = applyTransform;
-        [_textField layoutIfNeeded];
-    } completion:^(BOOL finished) {
+        _textField.bounds = CGRectMake(0.0f, 0.0f, 0.0f, fieldHei);
+    } completion:^(UIViewAnimatingPosition finalPosition) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }

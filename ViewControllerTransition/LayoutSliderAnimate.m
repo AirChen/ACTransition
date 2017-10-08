@@ -9,28 +9,28 @@
 #import "LayoutSliderAnimate.h"
 
 @interface LayoutSliderAnimate()
-@property(nonatomic,assign) SDETransitionType transitionType;
-@property(nonatomic,assign) TabOperationDirection tabOperation;
-@property(nonatomic,assign) ModalOperation modalOperation;
+@property(nonatomic,assign) ACTransitionType transitionType;
+@property(nonatomic,assign) ACTabOperateDirection tabOperation;
+@property(nonatomic,assign) ACModalOperation modalOperation;
 @property(nonatomic,assign) UINavigationControllerOperation navigationOperation;
 @end
 
 @implementation LayoutSliderAnimate
 
--(instancetype)initWithTransitionType:(SDETransitionType)type andOperation:(NSInteger)operation
+-(instancetype)initWithTransitionType:(ACTransitionType)type andOperation:(NSInteger)operation
 {
     if (self == [super init]) {
         _transitionType = type;
         switch (_transitionType) {
-            case ModalTransition:
+            case ACTransitionMod:
                 _modalOperation = operation;
                 break;
                 
-            case TabTransition:
+            case ACTransitionTab:
                 _tabOperation = operation;
                 break;
                 
-            case NavigationTransition:
+            case ACTransitionNav:
                 _navigationOperation = operation;
                 break;
                 
@@ -64,33 +64,33 @@
     CGAffineTransform toViewTransform = CGAffineTransformIdentity;
     
     switch (_transitionType) {
-        case NavigationTransition:
+        case ACTransitionNav:
             translation = _navigationOperation == UINavigationControllerOperationPush? translation:-translation;
             toViewTransform = CGAffineTransformMakeTranslation(translation, 0);
             fromViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
             break;
             
-        case TabTransition:
-            translation = _tabOperation == Left? translation : -translation;
+        case ACTransitionTab:
+            translation = _tabOperation == ACTabOperateDirectionLeft? translation : -translation;
             toViewTransform = CGAffineTransformMakeTranslation(translation, 0);
             fromViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
             break;
             
-        case ModalTransition:
+        case ACTransitionMod:
             translation = containerView.frame.size.height;
-            toViewTransform = CGAffineTransformMakeTranslation(0, (_modalOperation == Presentation ? translation:0));
-            fromViewTransform = CGAffineTransformMakeTranslation(0, (_modalOperation == Presentation?0:translation));
+            toViewTransform = CGAffineTransformMakeTranslation(0, (_modalOperation == ACModalOperationPresentation ? translation:0));
+            fromViewTransform = CGAffineTransformMakeTranslation(0, (_modalOperation == ACModalOperationPresentation?0:translation));
             break;
     }
     
     switch (_transitionType) {
-        case ModalTransition:
+        case ACTransitionMod:
             switch (_modalOperation) {
-                case Presentation:
+                case ACModalOperationPresentation:
                     [containerView addSubview:toView];
                     break;
                     
-                case Dismissal:
+                case ACModalOperationDismissal:
                     break;
             }
             break;
@@ -100,19 +100,27 @@
             break;
     }
     
-    toView.transform = toViewTransform;
-    
-    [UIView animateWithDuration:duration animations:^{
+    UIViewPropertyAnimator* animator = [[UIViewPropertyAnimator alloc] initWithDuration:duration curve:UIViewAnimationCurveEaseIn animations:^{
         fromView.transform = fromViewTransform;
-        toView.transform = CGAffineTransformIdentity;
-    } completion:^(BOOL finished) {
-        
+        toView.transform = toViewTransform;
+    }];
+    
+    [animator addCompletion:^(UIViewAnimatingPosition finalPosition) {
         fromView.transform = CGAffineTransformIdentity;
         toView.transform = CGAffineTransformIdentity;
         
         BOOL isCancel = [transitionContext transitionWasCancelled];
         [transitionContext completeTransition:!isCancel];
+        
     }];
+    
+    if (@available(iOS 11.0, *)) {
+        animator.scrubsLinearly = NO;
+    } else {
+        // Fallback on earlier versions
+    }
+    
+    [animator startAnimation];
 }
 
 @end

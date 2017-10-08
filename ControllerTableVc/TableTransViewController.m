@@ -25,8 +25,7 @@
     UIScreenEdgePanGestureRecognizer* edgePanGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(freshPanGesture:)];
     edgePanGesture.edges = UIRectEdgeLeft;
     self.view.userInteractionEnabled = YES;
-    [self.view
-     addGestureRecognizer:edgePanGesture];
+    [self.view addGestureRecognizer:edgePanGesture];
     
     [edgePanGesture setDelegate:self];
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
@@ -60,7 +59,6 @@
     
     NSLog(@"%f",percent);
     
-    
     switch (gesture.state) {
         case UIGestureRecognizerStateBegan:
             _transDelegate = [[TableViewTransDelegate alloc] init];
@@ -81,10 +79,6 @@
         default:
             break;
     }
-}
-
-- (IBAction)popBtn:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

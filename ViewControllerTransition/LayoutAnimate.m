@@ -40,10 +40,7 @@
     UIView *fromView = fromVc.view;
     UIView *toView = toVc.view;
     CGFloat duration = [self transitionDuration:transitionContext];
-    
-    CGRect position = [transitionContext finalFrameForViewController:toVc];
-    NSLog(@"%f",position.origin.x);
-    
+        
     if ([toVc isBeingPresented]) {
         [containerView addSubview:toView];
         CGFloat toViewWidth = containerView.frame.size.width * 2/3;
@@ -52,9 +49,9 @@
         toView.center = containerView.center;
         toView.bounds = CGRectMake(0, 0, 1, toViewHeight);
         
-        [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [UIViewPropertyAnimator runningPropertyAnimatorWithDuration:duration delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
             toView.bounds = CGRectMake(0, 0, toViewWidth, toViewHeight);
-        } completion:^(BOOL finished) {
+        } completion:^(UIViewAnimatingPosition finalPosition) {
             BOOL isCancel = [transitionContext transitionWasCancelled];
             [transitionContext completeTransition:!isCancel];
             /*
@@ -67,12 +64,13 @@
     if ([fromVc isBeingDismissed]) {
         CGFloat fromViewHeight = fromView.frame.size.height;
         
-        [UIView animateWithDuration:duration animations:^{
+        [UIViewPropertyAnimator runningPropertyAnimatorWithDuration:duration delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
             fromView.bounds = CGRectMake(0, 0, 1, fromViewHeight);
-        } completion:^(BOOL finished) {
+        } completion:^(UIViewAnimatingPosition finalPosition) {
             BOOL isCancel = [transitionContext transitionWasCancelled];
             [transitionContext completeTransition:!isCancel];
         }];
+
     }
 }
 

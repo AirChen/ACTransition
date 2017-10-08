@@ -15,14 +15,14 @@
 
 -(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
-//    return [[LayoutAnimate alloc] init];
-    return [[LayoutSliderAnimate alloc] initWithTransitionType:ModalTransition andOperation:Presentation];
+    return [[LayoutAnimate alloc] init];
+//    return [[LayoutSliderAnimate alloc] initWithTransitionType:ModalTransition andOperation:Presentation];
 }
 
 -(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
 {
-//        return [[LayoutAnimate alloc] init];
-    return [[LayoutSliderAnimate alloc] initWithTransitionType:ModalTransition andOperation:Dismissal];
+        return [[LayoutAnimate alloc] init];
+//    return [[LayoutSliderAnimate alloc] initWithTransitionType:ModalTransition andOperation:Dismissal];
 }
 
 -(UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source

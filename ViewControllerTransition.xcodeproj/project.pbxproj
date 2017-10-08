@@ -36,7 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		543133561D410E9700DF6517 /* 视图控制器转场.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "视图控制器转场.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		543133561D410E9700DF6517 /* ViewControllerTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewControllerTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5431335A1D410E9700DF6517 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5431335C1D410E9700DF6517 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5431335D1D410E9700DF6517 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		5443F5871D43AFB700F445C5 /* LayoutAnimate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutAnimate.m; sourceTree = "<group>"; };
 		5443F5891D444C4C00F445C5 /* LayoutSliderAnimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutSliderAnimate.h; sourceTree = "<group>"; };
 		5443F58A1D444C4C00F445C5 /* LayoutSliderAnimate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutSliderAnimate.m; sourceTree = "<group>"; };
-		5443F5911D44AEB900F445C5 /* 控制器TableVc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "控制器TableVc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5443F5911D44AEB900F445C5 /* ControllerTableVc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ControllerTableVc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5443F5941D44AEB900F445C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5443F5961D44AEB900F445C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5443F5971D44AEB900F445C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		5443F5AC1D44AFDB00F445C5 /* TableViewTransDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewTransDelegate.m; sourceTree = "<group>"; };
 		5443F5AE1D44B0D900F445C5 /* NaviAnimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviAnimate.h; sourceTree = "<group>"; };
 		5443F5AF1D44B0D900F445C5 /* NaviAnimate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviAnimate.m; sourceTree = "<group>"; };
-		54F1C2A71D463718004C0460 /* 导航控制器转场.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "导航控制器转场.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		54F1C2A71D463718004C0460 /* NaviControllerTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaviControllerTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F1C2AA1D463718004C0460 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54F1C2AC1D463718004C0460 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		54F1C2AD1D463718004C0460 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -113,9 +113,9 @@
 		5431334D1D410E9700DF6517 = {
 			isa = PBXGroup;
 			children = (
-				543133581D410E9700DF6517 /* 视图控制器转场 */,
-				5443F5921D44AEB900F445C5 /* 控制器TableVc */,
-				54F1C2A81D463718004C0460 /* 导航控制器转场 */,
+				543133581D410E9700DF6517 /* ViewControllerTransition */,
+				5443F5921D44AEB900F445C5 /* ControllerTableVc */,
+				54F1C2A81D463718004C0460 /* NaviControllerTransition */,
 				543133571D410E9700DF6517 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,14 +123,14 @@
 		543133571D410E9700DF6517 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				543133561D410E9700DF6517 /* 视图控制器转场.app */,
-				5443F5911D44AEB900F445C5 /* 控制器TableVc.app */,
-				54F1C2A71D463718004C0460 /* 导航控制器转场.app */,
+				543133561D410E9700DF6517 /* ViewControllerTransition.app */,
+				5443F5911D44AEB900F445C5 /* ControllerTableVc.app */,
+				54F1C2A71D463718004C0460 /* NaviControllerTransition.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		543133581D410E9700DF6517 /* 视图控制器转场 */ = {
+		543133581D410E9700DF6517 /* ViewControllerTransition */ = {
 			isa = PBXGroup;
 			children = (
 				5431335C1D410E9700DF6517 /* AppDelegate.h */,
@@ -146,7 +146,7 @@
 				5431336A1D410E9800DF6517 /* Info.plist */,
 				543133591D410E9700DF6517 /* Supporting Files */,
 			);
-			path = "视图控制器转场";
+			path = ViewControllerTransition;
 			sourceTree = "<group>";
 		};
 		543133591D410E9700DF6517 /* Supporting Files */ = {
@@ -172,7 +172,7 @@
 			name = ConstomTrasition;
 			sourceTree = "<group>";
 		};
-		5443F5921D44AEB900F445C5 /* 控制器TableVc */ = {
+		5443F5921D44AEB900F445C5 /* ControllerTableVc */ = {
 			isa = PBXGroup;
 			children = (
 				5443F5961D44AEB900F445C5 /* AppDelegate.h */,
@@ -189,7 +189,7 @@
 				5443F5A41D44AEB900F445C5 /* Info.plist */,
 				5443F5931D44AEB900F445C5 /* Supporting Files */,
 			);
-			path = "控制器TableVc";
+			path = ControllerTableVc;
 			sourceTree = "<group>";
 		};
 		5443F5931D44AEB900F445C5 /* Supporting Files */ = {
@@ -200,7 +200,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		54F1C2A81D463718004C0460 /* 导航控制器转场 */ = {
+		54F1C2A81D463718004C0460 /* NaviControllerTransition */ = {
 			isa = PBXGroup;
 			children = (
 				54F1C2AC1D463718004C0460 /* AppDelegate.h */,
@@ -216,7 +216,7 @@
 				54F1C2BA1D463718004C0460 /* Info.plist */,
 				54F1C2A91D463718004C0460 /* Supporting Files */,
 			);
-			path = "导航控制器转场";
+			path = NaviControllerTransition;
 			sourceTree = "<group>";
 		};
 		54F1C2A91D463718004C0460 /* Supporting Files */ = {
@@ -230,9 +230,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		543133551D410E9700DF6517 /* 视图控制器转场 */ = {
+		543133551D410E9700DF6517 /* ViewControllerTransition */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5431336D1D410E9800DF6517 /* Build configuration list for PBXNativeTarget "视图控制器转场" */;
+			buildConfigurationList = 5431336D1D410E9800DF6517 /* Build configuration list for PBXNativeTarget "ViewControllerTransition" */;
 			buildPhases = (
 				543133521D410E9700DF6517 /* Sources */,
 				543133531D410E9700DF6517 /* Frameworks */,
@@ -242,14 +242,14 @@
 			);
 			dependencies = (
 			);
-			name = "视图控制器转场";
+			name = ViewControllerTransition;
 			productName = "视图控制器转场";
-			productReference = 543133561D410E9700DF6517 /* 视图控制器转场.app */;
+			productReference = 543133561D410E9700DF6517 /* ViewControllerTransition.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5443F5901D44AEB900F445C5 /* 控制器TableVc */ = {
+		5443F5901D44AEB900F445C5 /* ControllerTableVc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5443F5A71D44AEB900F445C5 /* Build configuration list for PBXNativeTarget "控制器TableVc" */;
+			buildConfigurationList = 5443F5A71D44AEB900F445C5 /* Build configuration list for PBXNativeTarget "ControllerTableVc" */;
 			buildPhases = (
 				5443F58D1D44AEB900F445C5 /* Sources */,
 				5443F58E1D44AEB900F445C5 /* Frameworks */,
@@ -259,14 +259,14 @@
 			);
 			dependencies = (
 			);
-			name = "控制器TableVc";
+			name = ControllerTableVc;
 			productName = "控制器TableVc";
-			productReference = 5443F5911D44AEB900F445C5 /* 控制器TableVc.app */;
+			productReference = 5443F5911D44AEB900F445C5 /* ControllerTableVc.app */;
 			productType = "com.apple.product-type.application";
 		};
-		54F1C2A61D463718004C0460 /* 导航控制器转场 */ = {
+		54F1C2A61D463718004C0460 /* NaviControllerTransition */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 54F1C2BD1D463718004C0460 /* Build configuration list for PBXNativeTarget "导航控制器转场" */;
+			buildConfigurationList = 54F1C2BD1D463718004C0460 /* Build configuration list for PBXNativeTarget "NaviControllerTransition" */;
 			buildPhases = (
 				54F1C2A31D463718004C0460 /* Sources */,
 				54F1C2A41D463718004C0460 /* Frameworks */,
@@ -276,9 +276,9 @@
 			);
 			dependencies = (
 			);
-			name = "导航控制器转场";
+			name = NaviControllerTransition;
 			productName = "导航控制器转场";
-			productReference = 54F1C2A71D463718004C0460 /* 导航控制器转场.app */;
+			productReference = 54F1C2A71D463718004C0460 /* NaviControllerTransition.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -287,7 +287,7 @@
 		5431334E1D410E9700DF6517 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Air_chen;
 				TargetAttributes = {
 					543133551D410E9700DF6517 = {
@@ -304,7 +304,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 543133511D410E9700DF6517 /* Build configuration list for PBXProject "视图控制器转场" */;
+			buildConfigurationList = 543133511D410E9700DF6517 /* Build configuration list for PBXProject "ViewControllerTransition" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -317,9 +317,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				543133551D410E9700DF6517 /* 视图控制器转场 */,
-				5443F5901D44AEB900F445C5 /* 控制器TableVc */,
-				54F1C2A61D463718004C0460 /* 导航控制器转场 */,
+				543133551D410E9700DF6517 /* ViewControllerTransition */,
+				5443F5901D44AEB900F445C5 /* ControllerTableVc */,
+				54F1C2A61D463718004C0460 /* NaviControllerTransition */,
 			);
 		};
 /* End PBXProject section */
@@ -450,13 +450,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -493,13 +501,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -526,7 +542,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "视图控制器转场/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ViewControllerTransition/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "air.-------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -537,7 +553,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "视图控制器转场/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ViewControllerTransition/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "air.-------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -548,7 +564,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "控制器TableVc/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ControllerTableVc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "air.---TableVc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -559,7 +575,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "控制器TableVc/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ControllerTableVc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "air.---TableVc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -570,7 +586,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "导航控制器转场/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NaviControllerTransition/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "air.-------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -581,7 +597,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "导航控制器转场/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NaviControllerTransition/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "air.-------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -591,7 +607,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		543133511D410E9700DF6517 /* Build configuration list for PBXProject "视图控制器转场" */ = {
+		543133511D410E9700DF6517 /* Build configuration list for PBXProject "ViewControllerTransition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5431336B1D410E9800DF6517 /* Debug */,
@@ -600,7 +616,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5431336D1D410E9800DF6517 /* Build configuration list for PBXNativeTarget "视图控制器转场" */ = {
+		5431336D1D410E9800DF6517 /* Build configuration list for PBXNativeTarget "ViewControllerTransition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5431336E1D410E9800DF6517 /* Debug */,
@@ -609,7 +625,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5443F5A71D44AEB900F445C5 /* Build configuration list for PBXNativeTarget "控制器TableVc" */ = {
+		5443F5A71D44AEB900F445C5 /* Build configuration list for PBXNativeTarget "ControllerTableVc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5443F5A51D44AEB900F445C5 /* Debug */,
@@ -618,13 +634,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		54F1C2BD1D463718004C0460 /* Build configuration list for PBXNativeTarget "导航控制器转场" */ = {
+		54F1C2BD1D463718004C0460 /* Build configuration list for PBXNativeTarget "NaviControllerTransition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				54F1C2BB1D463718004C0460 /* Debug */,
 				54F1C2BC1D463718004C0460 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

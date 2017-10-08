@@ -11,14 +11,14 @@
 #import "MDTransitionDelegate.h"
 
 @interface PresentingViewController ()
-@property(nonatomic,strong) MDTransitionDelegate *transiDelegate;
+@property(nonatomic,strong) MDTransitionDelegate *transDelegate;
 @end
 
 @implementation PresentingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _transiDelegate = [[MDTransitionDelegate alloc] init];
+    _transDelegate = [[MDTransitionDelegate alloc] init];
 
 }
 
@@ -27,11 +27,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     PresentedViewController *vc = segue.destinationViewController;
-    vc.transitioningDelegate = _transiDelegate;
+    vc.transitioningDelegate = _transDelegate;
     vc.modalPresentationStyle = UIModalPresentationCustom;
     [super prepareForSegue:segue sender:sender];
 }
