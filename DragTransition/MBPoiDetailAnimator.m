@@ -21,12 +21,25 @@
     UIView *container = [transitionContext containerView];
     [container addSubview:toVC.view];
     
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateKeyframesWithDuration:0.3 delay:0.0 options:UIViewKeyframeAnimationOptionAllowUserInteraction animations:^{
         toVC.view.frame = fromVCRect;
+        [UIView addKeyframeWithRelativeStartTime:0.2 relativeDuration:0.1 animations:^{
+            toVC.view.transform = CGAffineTransformMakeTranslation(100.0, 0.0);
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0.25 relativeDuration:0.1 animations:^{
+            toVC.view.transform = CGAffineTransformIdentity;
+        }];
     } completion:^(BOOL finished) {
         BOOL isCancel = [transitionContext transitionWasCancelled];
         [transitionContext completeTransition:!isCancel];
     }];
+    
+//    [UIView animateWithDuration:0.3 animations:^{
+//        toVC.view.frame = fromVCRect;
+//    } completion:^(BOOL finished) {
+//        BOOL isCancel = [transitionContext transitionWasCancelled];
+//        [transitionContext completeTransition:!isCancel];
+//    }];
 }
 
 - (void)animateDismissingInContext:(id<UIViewControllerContextTransitioning>)transitionContext toVC:(UIViewController *)toVC fromVC:(UIViewController *)fromVC {
