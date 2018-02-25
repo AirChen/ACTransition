@@ -89,6 +89,8 @@
     CGFloat translationAbs = translationX > 0 ? translationX : -translationX;
     CGFloat percent = translationAbs > translationBase ? 1.0:translationAbs/translationBase;
     
+    NSLog(@"---------------------->> percent: %f", percent);
+    
     if (gesture.state == UIGestureRecognizerStateBegan) {
         [_bottomVc presentViewController:self.navigation animated:YES completion:nil];
     }
