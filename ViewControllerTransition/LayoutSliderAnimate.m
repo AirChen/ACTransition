@@ -8,48 +8,35 @@
 
 #import "LayoutSliderAnimate.h"
 
+typedef NS_ENUM(NSInteger, TabOperateDirection) {
+    TabOperateDirection_left,
+    TabOperateDirection_right,
+};
+
 @interface LayoutSliderAnimate()
-@property(nonatomic,assign) ACTransitionType transitionType;
-@property(nonatomic,assign) ACTabOperateDirection tabOperation;
-@property(nonatomic,assign) ACModalOperation modalOperation;
-@property(nonatomic,assign) UINavigationControllerOperation navigationOperation;
+@property(nonatomic, assign) TransitionType transitionType;
+@property(nonatomic, assign) ModalOperation operation;
 @end
 
 @implementation LayoutSliderAnimate
-
--(instancetype)initWithTransitionType:(ACTransitionType)type andOperation:(NSInteger)operation
 {
+    
+}
+
+- (instancetype)initWithTransitionType:(TransitionType)type operation:(ModalOperation)operation {
     if (self == [super init]) {
         _transitionType = type;
-        switch (_transitionType) {
-            case ACTransitionMod:
-                _modalOperation = operation;
-                break;
-                
-            case ACTransitionTab:
-                _tabOperation = operation;
-                break;
-                
-            case ACTransitionNav:
-                _navigationOperation = operation;
-                break;
-                
-            default:
-                break;
-        }
-        
+        _operation = operation;
     }
     
     return self;
 }
 
--(NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
-{
+- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
     return 0.3;
 }
 
--(void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
-{
+- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
     UIViewController *fromVc = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVc = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *containerView = [transitionContext containerView];
@@ -59,46 +46,45 @@
     
     CGFloat duration = [self transitionDuration:transitionContext];
     
-    CGFloat translation = containerView.bounds.size.width;
+    CGFloat translation = CGRectGetWidth(containerView.bounds);
     CGAffineTransform fromViewTransform = CGAffineTransformIdentity;
     CGAffineTransform toViewTransform = CGAffineTransformIdentity;
     
     switch (_transitionType) {
-        case ACTransitionNav:
-            translation = _navigationOperation == UINavigationControllerOperationPush? translation:-translation;
+        case TransitionType_nav:
+        case TransitionType_tab:
+            translation = (_operation == ModalOperation_presentation) ? translation : -translation;
             toViewTransform = CGAffineTransformMakeTranslation(translation, 0);
             fromViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
             break;
             
-        case ACTransitionTab:
-            translation = _tabOperation == ACTabOperateDirectionLeft? translation : -translation;
-            toViewTransform = CGAffineTransformMakeTranslation(translation, 0);
-            fromViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
-            break;
-            
-        case ACTransitionMod:
+        case TransitionType_mod:
             translation = containerView.frame.size.height;
-            toViewTransform = CGAffineTransformMakeTranslation(0, (_modalOperation == ACModalOperationPresentation ? translation:0));
-            fromViewTransform = CGAffineTransformMakeTranslation(0, (_modalOperation == ACModalOperationPresentation?0:translation));
+            toViewTransform = CGAffineTransformMakeTranslation(0, 0);
+            fromViewTransform = CGAffineTransformMakeTranslation(0, translation);
             break;
     }
     
-    switch (_transitionType) {
-        case ACTransitionMod:
-            switch (_modalOperation) {
-                case ACModalOperationPresentation:
-                    [containerView addSubview:toView];
-                    break;
-                    
-                case ACModalOperationDismissal:
-                    break;
-            }
-            break;
-            
-        default:
-            [containerView addSubview:toView];
-            break;
+//    switch (_transitionType) {
+//        case TransitionType_mod:
+//            switch (_modalOperation) {
+//                case ModalOperation_presentation:
+//                    [containerView addSubview:toView];
+//                    break;
+//
+//                case ModalOperation_dismissal:
+//                    break;
+//            }
+//            break;
+//
+//        default:
+//            break;
+//    }
+    
+    if (_operation == ModalOperation_presentation) {        
+        [containerView addSubview:toView];
     }
+    
     
     UIViewPropertyAnimator* animator = [[UIViewPropertyAnimator alloc] initWithDuration:duration curve:UIViewAnimationCurveEaseIn animations:^{
         fromView.transform = fromViewTransform;
@@ -111,7 +97,6 @@
         
         BOOL isCancel = [transitionContext transitionWasCancelled];
         [transitionContext completeTransition:!isCancel];
-        
     }];
     
     if (@available(iOS 11.0, *)) {

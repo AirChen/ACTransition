@@ -8,31 +8,23 @@
 
 #import "PresentingViewController.h"
 #import "PresentedViewController.h"
-#import "MDTransitionDelegate.h"
-
-@interface PresentingViewController ()
-@property(nonatomic,strong) MDTransitionDelegate *transDelegate;
-@end
+#import "TransitionDelegate.h"
 
 @implementation PresentingViewController
+{
+    TransitionDelegate *_transDelegate;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _transDelegate = [[MDTransitionDelegate alloc] init];
-
+    _transDelegate = [[TransitionDelegate alloc] init];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    PresentedViewController *vc = segue.destinationViewController;
-    vc.transitioningDelegate = _transDelegate;
-    vc.modalPresentationStyle = UIModalPresentationCustom;
-    [super prepareForSegue:segue sender:sender];
+- (IBAction)presentClickedAction:(id)sender {
+    PresentedViewController *presentedViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"presented"];
+    presentedViewController.transitioningDelegate = _transDelegate;
+    presentedViewController.modalPresentationStyle = UIModalPresentationCustom;
+    [self presentViewController:presentedViewController animated:YES completion:nil];
 }
 
 @end

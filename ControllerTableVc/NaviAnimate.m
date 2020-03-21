@@ -10,16 +10,13 @@
 
 @implementation NaviAnimate
 
--(NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
-{
+- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
     return 0.3;
 }
 
--(void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
-{
-    // UITransitionContextFromViewKey, and UITransitionContextToViewKey
+- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
     UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
-    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey]; 
     UIView *containerView = [transitionContext containerView];
     
     [containerView addSubview:toView];

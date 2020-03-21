@@ -11,61 +11,40 @@
 @interface PresentedViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *diningBtn;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *fieldWidthConstrains;
 @end
 
 @implementation PresentedViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    [_diningBtn addTarget:self action:@selector(dismissView) forControlEvents:UIControlEventTouchUpInside];
     _diningBtn.alpha = 0;
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    CGFloat fieldHei = _textField.bounds.size.height;
-    CGFloat modifiedWid = self.view.bounds.size.width * 2.0f/3.0f;
-        
+
+    _fieldWidthConstrains.constant = 240.f;
     [UIViewPropertyAnimator runningPropertyAnimatorWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
         _diningBtn.alpha = 1;
-        _textField.bounds = CGRectMake(0.0f, 0.0f, modifiedWid, fieldHei);
-    } completion:^(UIViewAnimatingPosition finalPosition) {
-        
-    }];
+        [self.view layoutIfNeeded];
+    } completion:nil];
 }
 
--(void)dismissView
-{
+- (IBAction)diningButtonClickedAction:(id)sender {
     CGAffineTransform applyTransform = CGAffineTransformMakeRotation( 3.0f * (CGFloat)M_PI);
     applyTransform = CGAffineTransformScale(applyTransform, 0.1f, 0.1f);
-    
-    CGFloat fieldHei = _textField.bounds.size.height;
-
+        
+    _fieldWidthConstrains.constant = 1.f;
     [UIViewPropertyAnimator runningPropertyAnimatorWithDuration:0.4f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
         _diningBtn.transform = applyTransform;
-        _textField.bounds = CGRectMake(0.0f, 0.0f, 0.0f, fieldHei);
+        _diningBtn.alpha = 0;
+        [self.view layoutIfNeeded];
     } completion:^(UIViewAnimatingPosition finalPosition) {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        if (finalPosition == UIViewAnimatingPositionEnd) {
+            [_textField removeFromSuperview];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
     }];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -9,10 +9,9 @@
 #import "TableTransViewController.h"
 #import "TableViewTransDelegate.h"
 
-@interface TableTransViewController ()<UIGestureRecognizerDelegate>
+@interface TableTransViewController () <UIGestureRecognizerDelegate>
 
-@property(nonatomic,strong) TableViewTransDelegate *transDelegate;
-//@property(nonatomic,strong) UIScreenEdgePanGestureRecognizer *edgePanGesture;
+@property(nonatomic, strong) TableViewTransDelegate *transDelegate;
 
 @end
 
@@ -24,40 +23,35 @@
     
     UIScreenEdgePanGestureRecognizer* edgePanGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(freshPanGesture:)];
     edgePanGesture.edges = UIRectEdgeLeft;
+    edgePanGesture.delegate = self;
     self.view.userInteractionEnabled = YES;
     [self.view addGestureRecognizer:edgePanGesture];
     
-    [edgePanGesture setDelegate:self];
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
-    
 }
 
--(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
-{
-    if ([gestureRecognizer class] == [UIScreenEdgePanGestureRecognizer class]) {
+#pragma mark -- UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if ([gestureRecognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
         return YES;
     }
     
     return NO;
 }
 
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-    if ([gestureRecognizer class] == [UIScreenEdgePanGestureRecognizer class]) {
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if ([gestureRecognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
         return YES;
     }
     
     return NO;
 }
 
--(void)freshPanGesture:(UIScreenEdgePanGestureRecognizer *)gesture
-{
+- (void)freshPanGesture:(UIScreenEdgePanGestureRecognizer *)gesture {
     CGFloat translationX = [gesture translationInView:self.view].x;
     CGFloat translationBase = self.view.frame.size.width / 3;
     CGFloat translationAbs = translationX > 0 ? translationX : -translationX;
     CGFloat percent = translationAbs > translationBase ? 1.0:translationAbs/translationBase;
-    
-    NSLog(@"%f",percent);
     
     switch (gesture.state) {
         case UIGestureRecognizerStateBegan:
@@ -70,9 +64,9 @@
             break;
             
         case UIGestureRecognizerStateEnded:
-            if (percent > 0.5) {
+            if (percent > 0.5)
                 [_transDelegate.interaction finishInteractiveTransition];
-            }else
+            else
                 [_transDelegate.interaction cancelInteractiveTransition];
             break;
             

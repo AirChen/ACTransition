@@ -8,29 +8,25 @@
 
 #import "AppDelegate.h"
 #import "NaviTransAnimate.h"
-#import "BottomViewController.h"
 #import "NaviPresentation.h"
 
-@interface AppDelegate ()<UIViewControllerTransitioningDelegate,NaviTransAnimateDelegate>
-@property(nonatomic,strong) BottomViewController *bottomVc;
-@property(nonatomic,strong) UIPercentDrivenInteractiveTransition *interaction;
-@property(nonatomic,strong) UINavigationController *navigation;
+@interface AppDelegate ()<UIViewControllerTransitioningDelegate, NaviTransAnimateDelegate>
+@property(nonatomic, strong) UIPercentDrivenInteractiveTransition *interaction;
+@property(nonatomic, strong) UINavigationController *navigation;
 @end
 
 @implementation AppDelegate
 
--(UIPercentDrivenInteractiveTransition *)interaction
-{
-    if (_interaction == nil) {
+- (UIPercentDrivenInteractiveTransition *)interaction {
+    if (!_interaction) {
         _interaction = [[UIPercentDrivenInteractiveTransition alloc] init];
     }
     
     return _interaction;
 }
 
--(UINavigationController *)navigation
-{
-    if (_navigation == nil) {
+- (UINavigationController *)navigation {
+    if (!_navigation) {
         _navigation = [[UINavigationController alloc] init];
         
         UIViewController *vc1 = [[UIViewController alloc] init];
@@ -43,11 +39,9 @@
         [_navigation addChildViewController:vc1];
         [_navigation addChildViewController:vc2];
         [_navigation addChildViewController:vc3];
-        
-        //    [navi popToRootViewControllerAnimated:YES];
+                
         _navigation.modalPresentationStyle = UIModalPresentationCustom;
         _navigation.transitioningDelegate = self;
-
     }
     
     return _navigation;
@@ -58,11 +52,10 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    BottomViewController *vc = [[BottomViewController alloc] init];
+    UIViewController *vc = [[UIViewController alloc] init];
     vc.view.backgroundColor = [UIColor orangeColor];
     
     self.window.rootViewController = vc;
-    
     [self.window makeKeyAndVisible];
     
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(transitionAction)];
@@ -72,27 +65,21 @@
     edgeGestrure.edges = UIRectEdgeLeft;
     [vc.view addGestureRecognizer:edgeGestrure];
     
-    _bottomVc = vc;
-    
     UITextField * testField = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, self.window.bounds.size.width *2/3, 65)];
     testField.text = @"Air Hello!";
-    
     [vc.view addSubview:testField];
     
     return YES;
 }
 
--(void)handleAction:(UIScreenEdgePanGestureRecognizer *)gesture
-{
-    CGFloat translationX = [gesture translationInView:_bottomVc.view].x;
-    CGFloat translationBase = _bottomVc.view.frame.size.width;
+- (void)handleAction:(UIScreenEdgePanGestureRecognizer *)gesture {
+    CGFloat translationX = [gesture translationInView:self.window.rootViewController.view].x;
+    CGFloat translationBase = CGRectGetWidth(self.window.rootViewController.view.frame);
     CGFloat translationAbs = translationX > 0 ? translationX : -translationX;
     CGFloat percent = translationAbs > translationBase ? 1.0:translationAbs/translationBase;
     
-    NSLog(@"---------------------->> percent: %f", percent);
-    
     if (gesture.state == UIGestureRecognizerStateBegan) {
-        [_bottomVc presentViewController:self.navigation animated:YES completion:nil];
+        [self.window.rootViewController presentViewController:self.navigation animated:YES completion:nil];
     }
     
     if (gesture.state == UIGestureRecognizerStateChanged) {
@@ -105,54 +92,38 @@
         }
         else
             [self.interaction cancelInteractiveTransition];
-        
-        NSLog(@"%@",_bottomVc.view);
     }
 }
 
--(void)transitionAction
-{
-    NSLog(@"tap!!");
-    [_bottomVc presentViewController:self.navigation animated:YES completion:nil];
+- (void)transitionAction {
+    [self.window.rootViewController presentViewController:self.navigation animated:YES completion:nil];
     [self.interaction finishInteractiveTransition];
 }
 
--(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
-{
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
     NaviTransAnimate *animate = [[NaviTransAnimate alloc] init];
     animate.deleg = self;
     return animate;
 }
 
--(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
-{
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
     NaviTransAnimate *animate = [[NaviTransAnimate alloc] init];
     animate.deleg = self;
     return animate;
 }
 
--(id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator
-{
+- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
     return self.interaction;
 }
 
--(id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator
-{
+- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator {
     return self.interaction;
 }
 
--(UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source
-{
+- (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
     NaviPresentation *presentation = [[NaviPresentation alloc] initWithPresentedViewController:presented presentingViewController:presenting];
     presentation.intersection = self.interaction;
     return presentation;
-}
-
--(void)echoViewStatus:(UIView *)view
-{
-//    _bottomVc.view = view;
-//    [_bottomVc viewDidAppear:YES];
-    NSLog(@"%@",view);
 }
 
 @end

@@ -15,22 +15,17 @@
 
 @implementation NaviTransAnimate
 static UIView *presentingView;
--(NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
-{
+- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
     return 0.5;
 }
 
--(void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
-{
+- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
     _context = transitionContext;
     
     UIViewController *fromVc = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVc = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
     UIView *containerView = [transitionContext containerView];
-    // UITransitionContextFromViewKey, and UITransitionContextToViewKey
-//    UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
-//    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
     UIView *fromView = fromVc.view;
     UIView *toView = toVc.view;
     
@@ -42,7 +37,6 @@ static UIView *presentingView;
         
         //    保留presenting
         presentingView = fromView.superview;
-//        [fromView removeFromSuperview];
         [containerView addSubview:fromView];
         
         toView.frame = CGRectMake(-containerView.bounds.size.width*2/3, 0, containerView.bounds.size.width*2/3, containerView.bounds.size.height);
@@ -79,17 +73,4 @@ static UIView *presentingView;
     }
     
 }
-
-#pragma mark - test Animation
-//-(void)animationEnded:(BOOL)transitionCompleted
-//{
-//    NSLog(@"toView %@",[_context viewForKey:UITransitionContextToViewKey]);
-//    NSLog(@"fromView %@",[_context viewForKey:UITransitionContextFromViewKey]);
-//    NSLog(@"toVc %@",[_context viewControllerForKey:UITransitionContextToViewControllerKey]);
-//    NSLog(@"fromVc %@",[_context viewControllerForKey:UITransitionContextFromViewControllerKey]);
-//    
-//    NSLog(@"toView--vc %@",[_context viewControllerForKey:UITransitionContextToViewControllerKey].view);
-//    NSLog(@"fromView--vc %@",[_context viewControllerForKey:UITransitionContextFromViewControllerKey].view);
-//}
-
 @end

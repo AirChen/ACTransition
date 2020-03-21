@@ -7,13 +7,13 @@
 //
 
 #import "DragViewController.h"
-#import "MBPoiDetailTransitionManager.h"
+#import "DetailTransitionManager.h"
 #import "PresentViewController.h"
 
 @interface DragViewController () <MBPoiDetailTransitionManagerDelegate>
 {
     UIView *_bottomBar;
-    MBPoiDetailTransitionManager *_presentTransitionManager;
+    DetailTransitionManager *_presentTransitionManager;
 }
 @end
 
@@ -31,15 +31,10 @@
     
     [self.view addSubview:_bottomBar];
     
-    _presentTransitionManager = [[MBPoiDetailTransitionManager alloc] initWithPresentedViewController:self presentingViewController:[PresentViewController new]];
+    _presentTransitionManager = [[DetailTransitionManager alloc] initWithPresentedViewController:self presentingViewController:[PresentViewController new]];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (UIView *)triggerPoiDetailTransitionAtView {
+- (UIView *)triggerDetailTransitionAtView {
     return _bottomBar;
 }
 

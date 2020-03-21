@@ -13,10 +13,10 @@
 		0966BBA22042D2DC00958A8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0966BBA12042D2DC00958A8D /* Assets.xcassets */; };
 		0966BBA52042D2DC00958A8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0966BBA32042D2DC00958A8D /* LaunchScreen.storyboard */; };
 		0966BBA82042D2DC00958A8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0966BBA72042D2DC00958A8D /* main.m */; };
-		098608F12042D5660058991E /* MBPoiDetailAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 098608EB2042D5660058991E /* MBPoiDetailAnimator.m */; };
-		098608F22042D5660058991E /* MBPoiDetailInteractive.m in Sources */ = {isa = PBXBuildFile; fileRef = 098608EC2042D5660058991E /* MBPoiDetailInteractive.m */; };
-		098608F32042D5660058991E /* MBPoiDetailTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 098608EE2042D5660058991E /* MBPoiDetailTransitionManager.m */; };
-		098608F62042D5CD0058991E /* MBBaseAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 098608F52042D5CD0058991E /* MBBaseAnimator.m */; };
+		098608F12042D5660058991E /* DetailAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 098608EB2042D5660058991E /* DetailAnimator.m */; };
+		098608F22042D5660058991E /* DetailInteractive.m in Sources */ = {isa = PBXBuildFile; fileRef = 098608EC2042D5660058991E /* DetailInteractive.m */; };
+		098608F32042D5660058991E /* DetailTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 098608EE2042D5660058991E /* DetailTransitionManager.m */; };
+		098608F62042D5CD0058991E /* BaseAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 098608F52042D5CD0058991E /* BaseAnimator.m */; };
 		098608F92042D77A0058991E /* PresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 098608F82042D77A0058991E /* PresentViewController.m */; };
 		5431335B1D410E9700DF6517 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5431335A1D410E9700DF6517 /* main.m */; };
 		5431335E1D410E9700DF6517 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5431335D1D410E9700DF6517 /* AppDelegate.m */; };
@@ -25,8 +25,8 @@
 		543133691D410E9800DF6517 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543133671D410E9800DF6517 /* LaunchScreen.storyboard */; };
 		543133721D410EDD00DF6517 /* PresentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 543133711D410EDD00DF6517 /* PresentedViewController.m */; };
 		5443F57F1D43A76100F445C5 /* PresentingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5443F57E1D43A76100F445C5 /* PresentingViewController.m */; };
-		5443F5821D43AEA900F445C5 /* MDTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5443F5811D43AEA900F445C5 /* MDTransitionDelegate.m */; };
-		5443F5851D43AF9B00F445C5 /* LayoutPresentationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5443F5841D43AF9B00F445C5 /* LayoutPresentationVC.m */; };
+		5443F5821D43AEA900F445C5 /* TransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5443F5811D43AEA900F445C5 /* TransitionDelegate.m */; };
+		5443F5851D43AF9B00F445C5 /* LayoutPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5443F5841D43AF9B00F445C5 /* LayoutPresentationController.m */; };
 		5443F5881D43AFB700F445C5 /* LayoutAnimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5443F5871D43AFB700F445C5 /* LayoutAnimate.m */; };
 		5443F58B1D444C4C00F445C5 /* LayoutSliderAnimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5443F58A1D444C4C00F445C5 /* LayoutSliderAnimate.m */; };
 		5443F5951D44AEB900F445C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5443F5941D44AEB900F445C5 /* main.m */; };
@@ -43,7 +43,6 @@
 		54F1C2B91D463718004C0460 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F1C2B71D463718004C0460 /* LaunchScreen.storyboard */; };
 		54F1C2C01D463B14004C0460 /* NaviTransAnimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F1C2BF1D463B14004C0460 /* NaviTransAnimate.m */; };
 		54F1C2C31D4644ED004C0460 /* NaviPresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F1C2C21D4644ED004C0460 /* NaviPresentation.m */; };
-		54F1C2C91D470ECC004C0460 /* BottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F1C2C81D470ECC004C0460 /* BottomViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,14 +56,14 @@
 		0966BBA42042D2DC00958A8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0966BBA62042D2DC00958A8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0966BBA72042D2DC00958A8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		098608EB2042D5660058991E /* MBPoiDetailAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBPoiDetailAnimator.m; sourceTree = "<group>"; };
-		098608EC2042D5660058991E /* MBPoiDetailInteractive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBPoiDetailInteractive.m; sourceTree = "<group>"; };
-		098608ED2042D5660058991E /* MBPoiDetailTransitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPoiDetailTransitionManager.h; sourceTree = "<group>"; };
-		098608EE2042D5660058991E /* MBPoiDetailTransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBPoiDetailTransitionManager.m; sourceTree = "<group>"; };
-		098608EF2042D5660058991E /* MBPoiDetailInteractive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPoiDetailInteractive.h; sourceTree = "<group>"; };
-		098608F02042D5660058991E /* MBPoiDetailAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPoiDetailAnimator.h; sourceTree = "<group>"; };
-		098608F42042D5CD0058991E /* MBBaseAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBBaseAnimator.h; sourceTree = "<group>"; };
-		098608F52042D5CD0058991E /* MBBaseAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBBaseAnimator.m; sourceTree = "<group>"; };
+		098608EB2042D5660058991E /* DetailAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailAnimator.m; sourceTree = "<group>"; };
+		098608EC2042D5660058991E /* DetailInteractive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailInteractive.m; sourceTree = "<group>"; };
+		098608ED2042D5660058991E /* DetailTransitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTransitionManager.h; sourceTree = "<group>"; };
+		098608EE2042D5660058991E /* DetailTransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTransitionManager.m; sourceTree = "<group>"; };
+		098608EF2042D5660058991E /* DetailInteractive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailInteractive.h; sourceTree = "<group>"; };
+		098608F02042D5660058991E /* DetailAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailAnimator.h; sourceTree = "<group>"; };
+		098608F42042D5CD0058991E /* BaseAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAnimator.h; sourceTree = "<group>"; };
+		098608F52042D5CD0058991E /* BaseAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAnimator.m; sourceTree = "<group>"; };
 		098608F72042D77A0058991E /* PresentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentViewController.h; sourceTree = "<group>"; };
 		098608F82042D77A0058991E /* PresentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentViewController.m; sourceTree = "<group>"; };
 		543133561D410E9700DF6517 /* ViewControllerTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewControllerTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,10 +78,10 @@
 		543133711D410EDD00DF6517 /* PresentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentedViewController.m; sourceTree = "<group>"; };
 		5443F57D1D43A76100F445C5 /* PresentingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentingViewController.h; sourceTree = "<group>"; };
 		5443F57E1D43A76100F445C5 /* PresentingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentingViewController.m; sourceTree = "<group>"; };
-		5443F5801D43AEA900F445C5 /* MDTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTransitionDelegate.h; sourceTree = "<group>"; };
-		5443F5811D43AEA900F445C5 /* MDTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTransitionDelegate.m; sourceTree = "<group>"; };
-		5443F5831D43AF9B00F445C5 /* LayoutPresentationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutPresentationVC.h; sourceTree = "<group>"; };
-		5443F5841D43AF9B00F445C5 /* LayoutPresentationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutPresentationVC.m; sourceTree = "<group>"; };
+		5443F5801D43AEA900F445C5 /* TransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionDelegate.h; sourceTree = "<group>"; };
+		5443F5811D43AEA900F445C5 /* TransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionDelegate.m; sourceTree = "<group>"; };
+		5443F5831D43AF9B00F445C5 /* LayoutPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutPresentationController.h; sourceTree = "<group>"; };
+		5443F5841D43AF9B00F445C5 /* LayoutPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutPresentationController.m; sourceTree = "<group>"; };
 		5443F5861D43AFB700F445C5 /* LayoutAnimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutAnimate.h; sourceTree = "<group>"; };
 		5443F5871D43AFB700F445C5 /* LayoutAnimate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutAnimate.m; sourceTree = "<group>"; };
 		5443F5891D444C4C00F445C5 /* LayoutSliderAnimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutSliderAnimate.h; sourceTree = "<group>"; };
@@ -112,8 +111,6 @@
 		54F1C2BF1D463B14004C0460 /* NaviTransAnimate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviTransAnimate.m; sourceTree = "<group>"; };
 		54F1C2C11D4644ED004C0460 /* NaviPresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviPresentation.h; sourceTree = "<group>"; };
 		54F1C2C21D4644ED004C0460 /* NaviPresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviPresentation.m; sourceTree = "<group>"; };
-		54F1C2C71D470ECC004C0460 /* BottomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomViewController.h; sourceTree = "<group>"; };
-		54F1C2C81D470ECC004C0460 /* BottomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,14 +154,14 @@
 				0966BB9C2042D2DC00958A8D /* DragViewController.m */,
 				098608F72042D77A0058991E /* PresentViewController.h */,
 				098608F82042D77A0058991E /* PresentViewController.m */,
-				098608F02042D5660058991E /* MBPoiDetailAnimator.h */,
-				098608EB2042D5660058991E /* MBPoiDetailAnimator.m */,
-				098608EF2042D5660058991E /* MBPoiDetailInteractive.h */,
-				098608EC2042D5660058991E /* MBPoiDetailInteractive.m */,
-				098608ED2042D5660058991E /* MBPoiDetailTransitionManager.h */,
-				098608EE2042D5660058991E /* MBPoiDetailTransitionManager.m */,
-				098608F42042D5CD0058991E /* MBBaseAnimator.h */,
-				098608F52042D5CD0058991E /* MBBaseAnimator.m */,
+				098608F02042D5660058991E /* DetailAnimator.h */,
+				098608EB2042D5660058991E /* DetailAnimator.m */,
+				098608EF2042D5660058991E /* DetailInteractive.h */,
+				098608EC2042D5660058991E /* DetailInteractive.m */,
+				098608ED2042D5660058991E /* DetailTransitionManager.h */,
+				098608EE2042D5660058991E /* DetailTransitionManager.m */,
+				098608F42042D5CD0058991E /* BaseAnimator.h */,
+				098608F52042D5CD0058991E /* BaseAnimator.m */,
 				0966BB9E2042D2DC00958A8D /* Main.storyboard */,
 				0966BBA12042D2DC00958A8D /* Assets.xcassets */,
 				0966BBA32042D2DC00958A8D /* LaunchScreen.storyboard */,
@@ -226,10 +223,10 @@
 		5443F58C1D44576B00F445C5 /* ConstomTrasition */ = {
 			isa = PBXGroup;
 			children = (
-				5443F5801D43AEA900F445C5 /* MDTransitionDelegate.h */,
-				5443F5811D43AEA900F445C5 /* MDTransitionDelegate.m */,
-				5443F5831D43AF9B00F445C5 /* LayoutPresentationVC.h */,
-				5443F5841D43AF9B00F445C5 /* LayoutPresentationVC.m */,
+				5443F5801D43AEA900F445C5 /* TransitionDelegate.h */,
+				5443F5811D43AEA900F445C5 /* TransitionDelegate.m */,
+				5443F5831D43AF9B00F445C5 /* LayoutPresentationController.h */,
+				5443F5841D43AF9B00F445C5 /* LayoutPresentationController.m */,
 				5443F5861D43AFB700F445C5 /* LayoutAnimate.h */,
 				5443F5871D43AFB700F445C5 /* LayoutAnimate.m */,
 				5443F5891D444C4C00F445C5 /* LayoutSliderAnimate.h */,
@@ -271,8 +268,6 @@
 			children = (
 				54F1C2AC1D463718004C0460 /* AppDelegate.h */,
 				54F1C2AD1D463718004C0460 /* AppDelegate.m */,
-				54F1C2C71D470ECC004C0460 /* BottomViewController.h */,
-				54F1C2C81D470ECC004C0460 /* BottomViewController.m */,
 				54F1C2BE1D463B14004C0460 /* NaviTransAnimate.h */,
 				54F1C2BF1D463B14004C0460 /* NaviTransAnimate.m */,
 				54F1C2C11D4644ED004C0460 /* NaviPresentation.h */,
@@ -396,6 +391,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -460,12 +456,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0966BB9D2042D2DC00958A8D /* DragViewController.m in Sources */,
-				098608F32042D5660058991E /* MBPoiDetailTransitionManager.m in Sources */,
+				098608F32042D5660058991E /* DetailTransitionManager.m in Sources */,
 				098608F92042D77A0058991E /* PresentViewController.m in Sources */,
-				098608F12042D5660058991E /* MBPoiDetailAnimator.m in Sources */,
+				098608F12042D5660058991E /* DetailAnimator.m in Sources */,
 				0966BBA82042D2DC00958A8D /* main.m in Sources */,
-				098608F62042D5CD0058991E /* MBBaseAnimator.m in Sources */,
-				098608F22042D5660058991E /* MBPoiDetailInteractive.m in Sources */,
+				098608F62042D5CD0058991E /* BaseAnimator.m in Sources */,
+				098608F22042D5660058991E /* DetailInteractive.m in Sources */,
 				0966BB9A2042D2DC00958A8D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,9 +473,9 @@
 				5443F58B1D444C4C00F445C5 /* LayoutSliderAnimate.m in Sources */,
 				543133721D410EDD00DF6517 /* PresentedViewController.m in Sources */,
 				5431335E1D410E9700DF6517 /* AppDelegate.m in Sources */,
-				5443F5851D43AF9B00F445C5 /* LayoutPresentationVC.m in Sources */,
+				5443F5851D43AF9B00F445C5 /* LayoutPresentationController.m in Sources */,
 				5443F5881D43AFB700F445C5 /* LayoutAnimate.m in Sources */,
-				5443F5821D43AEA900F445C5 /* MDTransitionDelegate.m in Sources */,
+				5443F5821D43AEA900F445C5 /* TransitionDelegate.m in Sources */,
 				5431335B1D410E9700DF6517 /* main.m in Sources */,
 				5443F57F1D43A76100F445C5 /* PresentingViewController.m in Sources */,
 			);
@@ -503,7 +499,6 @@
 			files = (
 				54F1C2C01D463B14004C0460 /* NaviTransAnimate.m in Sources */,
 				54F1C2AE1D463718004C0460 /* AppDelegate.m in Sources */,
-				54F1C2C91D470ECC004C0460 /* BottomViewController.m in Sources */,
 				54F1C2AB1D463718004C0460 /* main.m in Sources */,
 				54F1C2C31D4644ED004C0460 /* NaviPresentation.m in Sources */,
 			);
@@ -586,7 +581,7 @@
 				INFOPLIST_FILE = DragTransition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rzc.DragTransition;
+				PRODUCT_BUNDLE_IDENTIFIER = "air.---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -607,7 +602,7 @@
 				INFOPLIST_FILE = DragTransition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rzc.DragTransition;
+				PRODUCT_BUNDLE_IDENTIFIER = "air.---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -737,7 +732,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/ControllerTableVc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "air.---TableVc";
+				PRODUCT_BUNDLE_IDENTIFIER = "air.---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -748,7 +743,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/ControllerTableVc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "air.---TableVc";
+				PRODUCT_BUNDLE_IDENTIFIER = "air.---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

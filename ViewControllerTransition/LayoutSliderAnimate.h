@@ -8,24 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-typedef NS_ENUM(NSInteger, ACTransitionType) {
-    ACTransitionNav,
-    ACTransitionTab,
-    ACTransitionMod,
+typedef NS_ENUM(NSInteger, TransitionType) {
+    TransitionType_nav,
+    TransitionType_tab,
+    TransitionType_mod,
 };
 
-typedef NS_ENUM(NSInteger, ACTabOperateDirection) {
-    ACTabOperateDirectionLeft,
-    ACTabOperateDirectionRight,
+typedef NS_ENUM(NSInteger, ModalOperation) {
+    ModalOperation_presentation,
+    ModalOperation_dismissal,
 };
 
-typedef NS_ENUM(NSInteger, ACModalOperation) {
-    ACModalOperationPresentation,
-    ACModalOperationDismissal,
-};
+@interface LayoutSliderAnimate : NSObject <UIViewControllerAnimatedTransitioning>
 
-@interface LayoutSliderAnimate : NSObject<UIViewControllerAnimatedTransitioning>
-
--(instancetype)initWithTransitionType:(ACTransitionType) type andOperation:(NSInteger)operation;
+- (instancetype)initWithTransitionType:(TransitionType) type operation:(ModalOperation)operation;
 
 @end
